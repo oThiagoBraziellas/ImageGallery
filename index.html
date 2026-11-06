@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ImageGallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="bar">
+    <h1>Gallery</h1>
+    <label class="sr-only" for="search">Filter images</label>
+    <input id="search" type="search" placeholder="Filter by title or category" autocomplete="off">
+    <span id="count" class="count" aria-live="polite"></span>
+  </header>
+  <div id="chips" class="chips" role="group" aria-label="Categories"></div>
+  <main>
+    <ul id="grid" class="grid"></ul>
+    <p id="none" class="none" hidden>No images match your filter.</p>
+  </main>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+    <button id="lb-close" class="lb-btn close" type="button" aria-label="Close viewer">&times;</button>
+    <button id="lb-prev" class="lb-btn prev" type="button" aria-label="Previous image">&#8249;</button>
+    <div class="stage"><img id="lb-img" alt=""></div>
+    <button id="lb-next" class="lb-btn next" type="button" aria-label="Next image">&#8250;</button>
+    <div class="lb-info"><strong id="lb-title"></strong><span id="lb-pos" aria-live="polite"></span></div>
+  </div>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
